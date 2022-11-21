@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { AsideContainer } from "./style";
 
-const Aside = ({ posts, categories }) => {
+const Aside = ({ posts, categories, isInHomePage = true }) => {
   return (
     <AsideContainer>
       {posts.length && (
@@ -35,6 +35,11 @@ const Aside = ({ posts, categories }) => {
               <Link href={"/category/" + cat.name}>{cat.name}</Link>
             </p>
           ))}
+          {!isInHomePage && (
+            <button className="go-back">
+              <Link href={"/"}>Voltar para página principal</Link>
+            </button>
+          )}
         </div>
       )}
     </AsideContainer>

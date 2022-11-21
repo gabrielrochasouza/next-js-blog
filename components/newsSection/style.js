@@ -7,6 +7,10 @@ export const NewsSectionContainer = styled.section`
     width: 100%;
     flex: auto;
   }
+  h1 {
+    font-size: 2rem;
+    padding: 0 20px;
+  }
   .block-list-posts {
     width: 100%;
   }

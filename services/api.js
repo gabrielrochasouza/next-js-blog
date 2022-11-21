@@ -1,7 +1,7 @@
 import { GraphQLClient, gql } from "graphql-request";
 
 export const graphcms = new GraphQLClient(
-  "https://api-sa-east-1.hygraph.com/v2/cl9rvfher19mr01t8d5l74ioh/master"
+  process.env.GRAPHQLURL
 );
 
 export const queryHomePage = gql`
@@ -58,10 +58,48 @@ export const querySinglePost = gql`
   }
 `;
 
+export const singleCategoryQuery = gql`
+  query Post($category: String!) {
+    posts(where: { categories_some: { name: $category } }) {
+      id
+      createdAt
+      title
+      slug
+      excerpt
+      content {
+        html
+      }
+      coverImage {
+        url
+      }
+      author {
+        name
+        picture {
+          url
+        }
+      }
+      categories {
+        name
+      }
+    }
+    categories {
+      name
+    }
+  }
+`;
+
 export const slugList = gql`
   {
     posts {
       slug
+    }
+  }
+`;
+
+export const categoryList = gql`
+  {
+    categories {
+      name
     }
   }
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import { graphcms, querySinglePost, slugList } from "../../services/api";
 import SinglePostSection from "../../components/singlePostSection";
 import Head from "next/head";
+import NewsCard from "../../components/newsCard";
 
 export async function getStaticPaths() {
   const { posts } = await graphcms.request(slugList);
@@ -33,6 +34,11 @@ const PostPage = ({ posts }) => {
       </Head>
       <main className="container">
         <SinglePostSection posts={posts} />
+        <div className="flex-container top-cards-news">
+          {/* {relatedPosts.slice(0, 3).map((relatedPost) => (
+            <NewsCard key={relatedPost.id} post={relatedPost} />
+          ))} */}
+        </div>
       </main>
     </>
   );

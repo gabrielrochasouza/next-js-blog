@@ -23,5 +23,6 @@ export const AvatarConteiner = styled.div`
     margin: 0;
     padding: 0;
     font-size: 0.7rem;
+    display: block;
   }
 `;

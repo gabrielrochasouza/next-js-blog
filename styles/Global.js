@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
     }
     .container {
-        max-width: 1400px;
+        max-width: 1300px;
         margin: 0 auto;
     }
     .flex-container{
@@ -40,6 +40,12 @@ export const GlobalStyle = createGlobalStyle`
     main {
         margin: 24px 0 ;
 
+    }
+    button {
+        cursor: pointer;
+    }
+    input {
+        outline: 0;
     }
     main section {
         display: flex;
@@ -103,8 +109,11 @@ export const GlobalStyle = createGlobalStyle`
         --bg-t: #574ac7;
         --special-color1: #d4d4d4;
         --special-color2: #bab1ff;
-        --shadow-color:#000;
-        --category-special-color: #f0f; 
+        --shadow-color:rgba(0,0,0,0.2);
+        --category-special-color: #f0f;
+        @media (max-width: 460px) {
+            font-size: 10px;
+        }
     }
 
 `;

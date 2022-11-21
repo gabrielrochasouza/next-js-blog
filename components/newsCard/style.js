@@ -47,7 +47,7 @@ export const NewsCardContainer = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 20;
   }
   position: relative;
