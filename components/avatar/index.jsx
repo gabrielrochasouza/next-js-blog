@@ -6,8 +6,7 @@ const Avatar = ({ author, createdAt }) => {
   return (
     <AvatarConteiner>
       <Image
-        className="picture"
-        src={author?.picture.url}
+        src={author?.picture?.url}
         alt={author?.name}
         width={50}
         height={50}

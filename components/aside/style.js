@@ -28,4 +28,7 @@ export const AsideContainer = styled.aside`
       background-color: var(--category-special-color);
     }
   }
+  .box{
+    animation: fadeIn 1s;
+  }
 `;

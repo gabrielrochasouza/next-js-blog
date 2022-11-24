@@ -35,9 +35,6 @@ const PostPage = ({ posts }) => {
       <main className="container">
         <SinglePostSection posts={posts} />
         <div className="flex-container top-cards-news">
-          {/* {relatedPosts.slice(0, 3).map((relatedPost) => (
-            <NewsCard key={relatedPost.id} post={relatedPost} />
-          ))} */}
         </div>
       </main>
     </>

@@ -8,6 +8,7 @@ export const SinglePostSectionContainer = styled.section`
   border-radius: 20px;
   overflow: hidden;
   display: block;
+  animation: fadeInUp 1s;
   figure {
     overflow: hidden;
     border-radius: 20px;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NewsBlockContainer = styled.div`
   width: 100%;
+  animation: fadeInUp 1s;
   @media (max-width: 1250px) {
     width: 95%;
   }
@@ -31,7 +32,7 @@ export const NewsBlockContainer = styled.div`
     object-position: center;
     transition: 2s all;
     :hover {
-      transform: scale(1.4);
+      transform: scale(1.1);
       transition: 2s all;
     }
   }

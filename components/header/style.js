@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   z-index: 23;
-  .logo-link svg {
+  .container-header svg {
     @media (max-width: 1150px) {
       width: 70px;
       height: 50px;

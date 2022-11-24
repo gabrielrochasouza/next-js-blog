@@ -10,7 +10,7 @@ const NewsSection = ({ posts, category }) => {
         <h1>Posts Relacionados à Categoria {category}</h1>
       ) : (
         <div className="flex-container top-cards-news">
-          {posts.slice(0, 3).map((post) => (
+          {posts.reverse().slice(0, 3).map((post) => (
             <NewsCard key={post.id} post={post} />
           ))}
         </div>

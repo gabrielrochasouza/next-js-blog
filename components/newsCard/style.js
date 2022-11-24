@@ -4,6 +4,7 @@ export const NewsCardContainer = styled.div`
   border-radius: 16px;
   min-width: 240px;
   width: 240px;
+  animation: fadeIn 1s;
   height: 300px;
   a {
     color: var(--tx-p);
@@ -15,7 +16,7 @@ export const NewsCardContainer = styled.div`
     font-size: 0.9rem;
   }
   figure,
-  a figure .bg-img {
+  a figure img {
     width: 100%;
     height: 100%;
   }
@@ -23,7 +24,7 @@ export const NewsCardContainer = styled.div`
     position: relative;
     overflow: hidden;
     border-radius: 16px;
-    .bg-img {
+    img {
       transition: 2s all;
       height: 100%;
       object-fit: cover;

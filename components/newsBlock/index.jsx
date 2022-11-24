@@ -19,12 +19,12 @@ const NewsBlock = ({ post }) => {
     <NewsBlockContainer>
       <Link href={"/posts/" + slug}>
         <figure>
-          <Image src={coverImage.url} alt={title} width={800} height={800} />
+          <Image src={coverImage?.url} alt={title} width={800} height={800} />
           <figcaption>{title}</figcaption>
         </figure>
         <div>
           <span className="category">
-            {categories?.map((cat) => cat.name + " ")}
+            {categories?.map((cat) => cat.name).join(', ')}
           </span>
           <h2>{title}</h2>
           <span>{excerpt}</span>

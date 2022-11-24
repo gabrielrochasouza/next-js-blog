@@ -12,7 +12,6 @@ const NewsCard = ({ post }) => {
         <figure>
           <figcaption>{title}</figcaption>
           <Image
-            className="bg-img"
             width={500}
             height={500}
             src={coverImage.url}
