@@ -70,7 +70,7 @@ export const FooterContainer = styled.footer`
     font-size: 1rem;
     border: 2px solid var(--bg-t);
     outline: none;
-    border-radius: 12px;
+    border-radius: 10px;
   }
   button {
     margin-left: -30px;

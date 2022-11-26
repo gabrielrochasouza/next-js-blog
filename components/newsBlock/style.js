@@ -9,14 +9,14 @@ export const NewsBlockContainer = styled.div`
   margin: 0px auto 20px;
   background-color: var(--bg-s);
   padding: 20px 20px 0;
-  border-radius: 20px;
+  border-radius: 10px;
   @media (max-width: 550px) {
     padding: 15px 15px 0;
   }
   figure {
     width: 100%;
     height: 400px;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     @media (max-width: 550px) {
       height: 300px;

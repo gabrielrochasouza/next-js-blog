@@ -19,7 +19,7 @@ const Aside = ({ posts, categories, isInHomePage = true }) => {
                   alt={post.title}
                 />
                 <div>
-                  <span>{post.categories.map((cat) => cat.name)}</span>
+                  <span className='category'>{post.categories.map((cat) => cat.name).join(', ')}</span>
                   <p>{post.title}</p>
                 </div>
               </div>

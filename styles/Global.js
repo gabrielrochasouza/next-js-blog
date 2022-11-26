@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     .box {
         padding: 16px;
         background-color: var(--bg-s);
-        border-radius: 12px;
+        border-radius: 10px;
         p{
             margin: 16px 0;
         }
@@ -64,6 +64,7 @@ export const GlobalStyle = createGlobalStyle`
         @media (max-width: 1250px) {
             width: 100%;
             max-width: none;
+            padding: 0 10px;
         }
     }
     .avatar{
@@ -112,7 +113,7 @@ export const GlobalStyle = createGlobalStyle`
         --shadow-color:rgba(0,0,0,0.2);
         --category-special-color: #f0f;
         @media (max-width: 460px) {
-            font-size: 10px;
+            font-size: 13px;
         }
     }
     @keyframes fadeIn {

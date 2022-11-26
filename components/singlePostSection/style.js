@@ -9,6 +9,9 @@ export const SinglePostSectionContainer = styled.section`
   overflow: hidden;
   display: block;
   animation: fadeInUp 1s;
+  @media (max-width: 450px) {
+    padding: 13px;
+  }
   figure {
     overflow: hidden;
     border-radius: 20px;
@@ -56,10 +59,13 @@ export const SinglePostSectionContainer = styled.section`
     h6 {
       margin: 3px 0;
       padding: 5px 0;
-      line-height: 2.4rem;
+      line-height: 2.3rem;
     }
-    li, ul{
+    li, ul, ol{
+      line-height: 2.3rem;
       list-style: initial;
+      padding: 0 0 0 20px;
+      margin: initial;
     }
   }
 `;
@@ -127,5 +133,10 @@ export const CommentsContainer = styled.section`
       transition: 1s all;
       background-color: var(--bg-p);
     }
+  }
+  @media (max-width: 450px) {
+    button, input, textarea {
+      padding: 10px;
+    } 
   }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NewsCardContainer = styled.div`
-  border-radius: 16px;
+  border-radius: 10px;
   min-width: 240px;
   width: 240px;
   animation: fadeIn 1s;
@@ -23,7 +23,7 @@ export const NewsCardContainer = styled.div`
   figure {
     position: relative;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 10px;
     img {
       transition: 2s all;
       height: 100%;
@@ -47,7 +47,7 @@ export const NewsCardContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 16px;
+    border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 20;
   }
@@ -57,6 +57,7 @@ export const NewsCardContainer = styled.div`
     position: absolute;
     bottom: 0px;
     height: 100%;
+    width: 100%;
     padding: 30px 20px 20px;
     display: flex;
     flex-direction: column;

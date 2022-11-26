@@ -7,6 +7,7 @@ export const AsideContainer = styled.aside`
   p,
   span,
   a {
+    font-size: 1rem;
     transition: 0.3s;
     :hover {
       transition: 0.3s;
@@ -22,7 +23,7 @@ export const AsideContainer = styled.aside`
     outline: 0;
     cursor: pointer;
     transition: 1s all;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     :hover {
       transition: 1s all;
       background-color: var(--category-special-color);
@@ -30,5 +31,8 @@ export const AsideContainer = styled.aside`
   }
   .box{
     animation: fadeIn 1s;
+  }
+  .category{
+    color: var(--category-special-color);
   }
 `;
