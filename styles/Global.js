@@ -54,7 +54,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     aside {
         width: 100%;
-        max-width: 440px;
+        max-width: 400px;
         position: sticky;
         top: 108px;
         height: 100%;
@@ -105,7 +105,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --tx-p: #fff;
         --bg-p: #111;
-        --bg-s: #222;
+        --bg-s: #191919;
         --bg-t: #574ac7;
         --special-color1: #d4d4d4;
         --special-color2: #bab1ff;

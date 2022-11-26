@@ -61,6 +61,8 @@ export const NewsCardContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    transition: 2s all;
     z-index: 21;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 `;

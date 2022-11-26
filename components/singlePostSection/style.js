@@ -56,6 +56,10 @@ export const SinglePostSectionContainer = styled.section`
     h6 {
       margin: 3px 0;
       padding: 5px 0;
+      line-height: 2.4rem;
+    }
+    li, ul{
+      list-style: initial;
     }
   }
 `;
