@@ -61,7 +61,9 @@ export const SinglePostSectionContainer = styled.section`
       padding: 5px 0;
       line-height: 2.3rem;
     }
-    li, ul, ol{
+    li,
+    ul,
+    ol {
       line-height: 2.3rem;
       list-style: initial;
       padding: 0 0 0 20px;
@@ -124,6 +126,8 @@ export const CommentsContainer = styled.section`
     background-color: var(--bg-t);
     padding: 16px;
     margin: 8px 0 0;
+    max-height: 60px;
+    width: 140px;
     border: 0;
     outline: 0;
     color: var(--tx-p);
@@ -131,12 +135,132 @@ export const CommentsContainer = styled.section`
     transition: 1s all;
     :hover {
       transition: 1s all;
-      background-color: var(--bg-p);
+      background-color: var(--bg-t-hover);
     }
   }
   @media (max-width: 450px) {
-    button, input, textarea {
+    button,
+    input,
+    textarea {
       padding: 10px;
-    } 
+    }
+  }
+  .comment {
+    .comment-initials-name {
+      border-radius: 50%;
+      text-align: center;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+      background-color: var(--bg-t);
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    .comment-content {
+      flex: 1;
+      h4,
+      p {
+        margin: 0px 0 0;
+      }
+      h4 {
+        padding: 0 0 4px 0;
+        font-size: 1.1rem;
+      }
+      p {
+        padding: 0 30px 0 0;
+      }
+    }
+    .config {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      border-radius: 50%;
+      cursor: pointer;
+      :hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      svg {
+        color: var(--tx-p);
+        font-size: 1.2rem;
+        margin: 5px;
+      }
+    }
+    :hover {
+      .config {
+        display: inline-flex;
+      }
+    }
+    position: relative;
+    margin: 0 0 32px;
+    display: flex;
+    gap: 16px;
+    .datetime {
+      font-weight: 100;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+  }
+  .loading {
+    --speed-of-animation: 0.9s;
+    --gap: 6px;
+    --first-color: var(--bg-s);
+    --second-color: var(--tx-p);
+    --third-color: var(--bg-s);
+    --fourth-color: var(--tx-p);
+    --fifth-color: var(--bg-s);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    gap: 6px;
+    height: 30px;
+  }
+
+  .loading span {
+    width: 4px;
+    height: 20px;
+    background: var(--first-color);
+    animation: scale var(--speed-of-animation) ease-in-out infinite;
+  }
+
+  .loading span:nth-child(2) {
+    background: var(--second-color);
+    animation-delay: -0.8s;
+  }
+
+  .loading span:nth-child(3) {
+    background: var(--third-color);
+    animation-delay: -0.7s;
+  }
+
+  .loading span:nth-child(4) {
+    background: var(--fourth-color);
+    animation-delay: -0.6s;
+  }
+
+  .loading span:nth-child(5) {
+    background: var(--fifth-color);
+    animation-delay: -0.5s;
+  }
+  .showMore {
+    width: initial;
+    margin: 0 auto;
+    text-align: center;
+  }
+  @keyframes scale {
+    0%,
+    40%,
+    100% {
+      transform: scaleY(0.05);
+    }
+
+    20% {
+      transform: scaleY(1);
+    }
   }
 `;

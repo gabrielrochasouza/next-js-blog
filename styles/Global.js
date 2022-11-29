@@ -108,6 +108,7 @@ export const GlobalStyle = createGlobalStyle`
         --bg-p: #111;
         --bg-s: #191919;
         --bg-t: #574ac7;
+        --bg-t-hover: #576ac7;
         --special-color1: #d4d4d4;
         --special-color2: #bab1ff;
         --shadow-color:rgba(0,0,0,0.2);
@@ -115,6 +116,9 @@ export const GlobalStyle = createGlobalStyle`
         @media (max-width: 460px) {
             font-size: 13px;
         }
+    }
+    .otherPosts {
+        padding: 0 40px 20px;
     }
     @keyframes fadeIn {
         from{

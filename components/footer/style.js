@@ -95,7 +95,7 @@ export const FooterContainer = styled.footer`
       cursor: pointer;
       transition: 1s all;
       :hover {
-        color: var(--special-color1);
+        color: var(--bg-t);
         transition: 1s all;
       }
     }

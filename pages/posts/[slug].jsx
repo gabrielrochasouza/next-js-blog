@@ -1,8 +1,12 @@
 import React from "react";
-import { graphcms, querySinglePost, slugList } from "../../services/api";
+import {
+  graphcms,
+  querySinglePost,
+  slugList,
+  queryFirstThreePosts,
+} from "../../services/api";
 import SinglePostSection from "../../components/singlePostSection";
 import Head from "next/head";
-import NewsCard from "../../components/newsCard";
 import Loading from "../../components/loading";
 
 export async function getStaticPaths() {
@@ -17,15 +21,17 @@ export async function getStaticProps({ params }) {
   const { posts } = await graphcms.request(querySinglePost, {
     slug: params.slug,
   });
+  const otherPosts = await graphcms.request(queryFirstThreePosts);
   return {
     props: {
       posts,
+      otherPosts,
     },
     revalidate: 10,
   };
 }
 
-const PostPage = ({ posts }) => {
+const PostPage = ({ posts, otherPosts }) => {
   const { title, excerpt } = posts[0];
   return (
     <>
@@ -35,7 +41,7 @@ const PostPage = ({ posts }) => {
       </Head>
       {!posts.length && <Loading />}
       <main className="container">
-        <SinglePostSection posts={posts} />
+        <SinglePostSection posts={posts} otherPosts={otherPosts} />
         <div className="flex-container top-cards-news"></div>
       </main>
     </>

@@ -1,15 +1,18 @@
-import Header from '../components/header'
-import Footer from '../components/footer'
-import { GlobalStyle } from "../styles/Global"
+import Header from "../components/header";
+import Footer from "../components/footer";
+import { GlobalStyle } from "../styles/Global";
+import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }) {
   return (
-  <>
-    <Header/>
-    <Component {...pageProps} />
-    <Footer/>
-    <GlobalStyle/>
-  </>)
+    <>
+      <Header />
+      <Toaster position="top-center" reverseOrder={false} />
+      <Component {...pageProps} />
+      <Footer />
+      <GlobalStyle />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
