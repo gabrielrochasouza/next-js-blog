@@ -6,7 +6,7 @@ export const graphcms = new GraphQLClient(
 
 export const queryHomePage = gql`
   {
-    posts {
+    posts(orderBy: createdAt_DESC) {
       id
       createdAt
       title
@@ -60,7 +60,7 @@ export const querySinglePost = gql`
 
 export const singleCategoryQuery = gql`
   query Post($category: String!) {
-    posts(where: { categories_some: { name: $category } }) {
+    posts(where: { categories_some: { name: $category } }, orderBy: createdAt_DESC) {
       id
       createdAt
       title
