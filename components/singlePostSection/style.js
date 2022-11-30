@@ -92,7 +92,7 @@ export const CommentsContainer = styled.section`
   }
   input,
   textarea {
-    border: 1px solid var(--special-color2);
+    border: 1px solid var(--border-color);
     outline: 0;
     padding: 16px;
     background-color: var(--bg-s);
@@ -156,7 +156,7 @@ export const CommentsContainer = styled.section`
       justify-content: center;
       line-height: 0;
       background-color: var(--bg-t);
-      color: #fff;
+      color: var(--tx-p);
       font-size: 1.6rem;
       cursor: pointer;
     }
@@ -202,7 +202,7 @@ export const CommentsContainer = styled.section`
     gap: 16px;
     .datetime {
       font-weight: 100;
-      color: #ddd;
+      color: var(--tx-s);
       font-size: 0.9rem;
     }
   }

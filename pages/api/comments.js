@@ -19,6 +19,6 @@ export default async function asynchandler(req, res) {
     });
     res.status(200).json({ message: "Comentário criado com sucesso!" });
   } catch (err) {
-    res.status(400).json({ message: "Erro ao criar" });
+    res.status(400).json({ err });
   }
 }

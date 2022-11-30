@@ -36,7 +36,7 @@ export const FooterContainer = styled.footer`
   }
   button {
     background-color: var(--special-color1);
-    color: #fff;
+    color: var(--tx-p);
     svg {
       border: 0;
       outline: 0;
@@ -79,7 +79,7 @@ export const FooterContainer = styled.footer`
 
   input {
     background-color: var(--bg-s);
-    color: #fff;
+    color: var(--tx-p)
   }
   div section {
     display: flex;

@@ -61,7 +61,7 @@ const SinglePostSection = ({ posts, otherPosts }) => {
 
         <header>
           <span className="category">
-            {categories?.map((cat) => cat.name + " ")}
+            {categories?.map((cat) => cat.name).join(', ')}
           </span>
           <h1>{title}</h1>
           <Avatar author={author} createdAt={createdAt} />
@@ -84,6 +84,9 @@ const SinglePostSection = ({ posts, otherPosts }) => {
                 slug,
               })
                 .then(async (res) => {
+                  if (res.err) {
+                    throw new Error(res.err);
+                  }
                   const result = await getPost(slug);
                   setPost(result.posts[0]);
                   toast.success("Comentário criado com sucesso!");
@@ -131,7 +134,7 @@ const SinglePostSection = ({ posts, otherPosts }) => {
         </form>
       </CommentsContainer>
       <CommentsContainer>
-        <h2>Comentários</h2>
+        <h2>Comentários {comments.length && <>({comments.length})</>}</h2>
         {comments.length === 0 ? (
           <p>Ainda Não há nenhum comentário. Seja o primeiro a comentar!!</p>
         ) : (

@@ -94,7 +94,7 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
     a {
-        color: #fff;
+        color: var(--tx-p);
         text-decoration: none;
     }
     figcaption {
@@ -105,14 +105,16 @@ export const GlobalStyle = createGlobalStyle`
     }
     :root {
         --tx-p: #fff;
+        --tx-s: #ddd;
         --bg-p: #111;
         --bg-s: #191919;
         --bg-t: #574ac7;
         --bg-t-hover: #576ac7;
+        --border-color: #444;
         --special-color1: #d4d4d4;
         --special-color2: #bab1ff;
         --shadow-color:rgba(0,0,0,0.2);
-        --category-special-color: #f0f;
+        --category-special-color: #7573ff;
         @media (max-width: 460px) {
             font-size: 13px;
         }

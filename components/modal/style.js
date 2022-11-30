@@ -20,13 +20,13 @@ export const ModalContainer = styled.div`
     flex-direction: column;
   }
   .modal-header {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     svg {
-      color: #fff;
+      color: var(--tx-p);
       cursor: pointer;
       font-size: 28px;
     }
@@ -47,7 +47,7 @@ export const ModalContainer = styled.div`
         color: var(--tx-p);
       }
       input {
-        border: 1px solid #444;
+        border: 1px solid var(--border-color);
         background-color: transparent;
       }
       button {
