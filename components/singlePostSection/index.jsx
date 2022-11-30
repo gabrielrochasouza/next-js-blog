@@ -1,11 +1,12 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from "../avatar";
 import { SinglePostSectionContainer, CommentsContainer } from "./style";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { submitComment, getPost } from "../../services/api";
 import { toast } from "react-hot-toast";
 import NewsCard from "../newsCard";
+import Loading from "../loading";
 
 const SinglePostSection = ({ posts, otherPosts }) => {
   const [post, setPost] = useState(posts[0]);
@@ -25,6 +26,30 @@ const SinglePostSection = ({ posts, otherPosts }) => {
     categories,
     comments,
   } = post;
+
+  const clearCommentField = () => {
+    setComment("");
+    document.getElementById("comment").value = "";
+  };
+  const storeData = () => {
+    if (window !== undefined) {
+      window.localStorage.setItem("@name", name);
+      window.localStorage.setItem("@email", email);
+    }
+  };
+  useEffect(() => {
+    if (
+      window.localStorage.getItem("@name") &&
+      window.localStorage.getItem("@email")
+    ) {
+      document.getElementById("name").value =
+        window.localStorage.getItem("@name");
+      document.getElementById("email").value =
+        window.localStorage.getItem("@email");
+      setName(window.localStorage.getItem("@name"));
+      setEmail(window.localStorage.getItem("@email"));
+    }
+  }, []);
 
   return (
     <>
@@ -58,14 +83,16 @@ const SinglePostSection = ({ posts, otherPosts }) => {
                 comment,
                 slug,
               })
-                .then((res) => {
+                .then(async (res) => {
+                  const result = await getPost(slug);
+                  setPost(result.posts[0]);
                   toast.success("Comentário criado com sucesso!");
+                  clearCommentField();
+                  storeData();
                 })
                 .catch((err) => {
                   toast.error("Ocorreu um erro!");
                 });
-              const result = await getPost(slug);
-              setPost(result.posts[0]);
             } catch (err) {
               console.log(err);
             }
@@ -78,11 +105,13 @@ const SinglePostSection = ({ posts, otherPosts }) => {
             required
             className="name"
             type="text"
+            id="name"
             placeholder="Digite seu nome"
             onChange={(e) => setName(e.target.value)}
           />
           <input
             required
+            id="email"
             type="email"
             className="email"
             placeholder="Digite seu email"
@@ -90,23 +119,14 @@ const SinglePostSection = ({ posts, otherPosts }) => {
           />
           <textarea
             required
+            id="comment"
             type="text"
             placeholder="Deixe o comentário"
             onChange={(e) => setComment(e.target.value)}
           />
 
           <button type="submit" disabled={loading} className="submit-btn">
-            {loading ? (
-              <div class="loading">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            ) : (
-              <>Comentar</>
-            )}
+            {loading ? <Loading /> : <>Comentar</>}
           </button>
         </form>
       </CommentsContainer>
@@ -154,12 +174,14 @@ const SinglePostSection = ({ posts, otherPosts }) => {
           </>
         )}
       </CommentsContainer>
-      <h3 className="container otherPosts">Outros posts</h3>
-      <div className="flex-container top-cards-news otherPosts">
-        {otherPosts.posts.map((otherPost) => (
-          <NewsCard key={otherPost.id} post={otherPost} />
-        ))}
-      </div>
+      <CommentsContainer>
+        <h2>Outros posts</h2>
+        <div className="flex-container top-cards-news">
+          {otherPosts.posts.map((otherPost) => (
+            <NewsCard key={otherPost.id} post={otherPost} />
+          ))}
+        </div>
+      </CommentsContainer>
     </>
   );
 };

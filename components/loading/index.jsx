@@ -1,19 +1,18 @@
-import React from 'react';
-import { LoadContainer } from './style';
+import React from "react";
+import { LoadContainer } from "./style";
 
 const Loading = () => {
-    return (
-        <LoadContainer>
-            <div class="wrapper">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="shadow"></div>
-                <div class="shadow"></div>
-                <div class="shadow"></div>
-            </div>
-        </LoadContainer>
-    );
+  return (
+    <LoadContainer>
+      <div class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </LoadContainer>
+  );
 };
 
 export default Loading;

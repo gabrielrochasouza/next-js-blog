@@ -11,12 +11,7 @@ const NewsCard = ({ post }) => {
       <Link href={"/posts/" + slug}>
         <figure>
           <figcaption>{title}</figcaption>
-          <Image
-            width={500}
-            height={500}
-            src={coverImage.url}
-            alt={title}
-          />
+          <Image width={500} height={500} src={coverImage.url} alt={title} />
           <div>
             <div className="info">
               <span>{categories?.map((cat) => cat.name + " ")}</span>

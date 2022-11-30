@@ -14,11 +14,11 @@ export const HeaderContainer = styled.header`
       height: 50px;
     }
   }
-  .search {
+  .icon {
     cursor: pointer;
     svg {
       cursor: pointer;
-      font-size: 13px;
+      font-size: 18px;
     }
   }
   .container-header {
@@ -49,7 +49,10 @@ export const HeaderContainer = styled.header`
     height: 100%;
     background-color: var(--bg-p);
     position: fixed;
-    top: 0;
+    top: ${(prop) => (prop.searchScreen ? "0" : "100%")};
+    transition-delay: 1s;
+    opacity: ${(prop) => (prop.searchScreen ? "1" : "0")};
+    transition: 1s all;
     left: 0;
     display: flex;
     align-items: center;
@@ -59,6 +62,8 @@ export const HeaderContainer = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
+      border-bottom: 2px solid var(--tx-p);
+      padding: 0 10px;
       svg {
         font-size: 2rem;
         cursor: pointer;
@@ -71,7 +76,6 @@ export const HeaderContainer = styled.header`
         padding: 26px;
         color: var(--tx-p);
         font-size: 1.9rem;
-        border-bottom: 2px solid var(--tx-p);
       }
     }
 
@@ -82,14 +86,6 @@ export const HeaderContainer = styled.header`
       color: var(--tx-p);
       font-size: 3rem;
       cursor: pointer;
-    }
-  }
-  @keyframes slideUp {
-    from {
-      top: 100%;
-    }
-    to {
-      top: 0;
     }
   }
 `;

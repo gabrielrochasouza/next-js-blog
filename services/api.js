@@ -86,7 +86,7 @@ export const querySinglePost = gql`
       categories {
         name
       }
-      comments {
+      comments(orderBy: createdAt_DESC) {
         id
         name
         comment
@@ -145,6 +145,14 @@ export const categoryList = gql`
   }
 `;
 
+export const newsLetterMutation = gql`
+  mutation createNewsletter($email: String!) {
+    createNewsletter(data: { email: $email }) {
+      id
+    }
+  }
+`;
+
 export const makeCommentMutation = gql`
   mutation CreateComment(
     $name: String!
@@ -174,6 +182,17 @@ export const submitComment = async (obj) => {
     body: JSON.stringify(obj),
   });
 
+  return result.json();
+};
+
+export const submitNewsletter = async (obj) => {
+  const result = await fetch("/api/newsletter/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(obj),
+  });
   return result.json();
 };
 
