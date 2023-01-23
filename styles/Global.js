@@ -119,6 +119,9 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 13px;
         }
     }
+    ::-webkit-scrollbar {
+        height: 0;
+    }
     .otherPosts {
         padding: 0 40px 20px;
     }

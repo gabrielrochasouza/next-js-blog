@@ -8,7 +8,7 @@ const NewsCard = ({ post }) => {
   const { id, slug, createdAt, title, coverImage, author, categories } = post;
   return (
     <NewsCardContainer>
-      <Link href={"/posts/" + slug}>
+      <a href={"/posts/" + slug}>
         <figure>
           <figcaption>{title}</figcaption>
           <Image width={500} height={500} src={coverImage.url} alt={title} />
@@ -20,7 +20,7 @@ const NewsCard = ({ post }) => {
             </div>
           </div>
         </figure>
-      </Link>
+      </a>
     </NewsCardContainer>
   );
 };

@@ -3,15 +3,17 @@ import styled from "styled-components";
 export const AvatarConteiner = styled.div`
   margin: 5px 0;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
+  cursor: pointer;
   div {
     width: 90%;
   }
   .author-name {
     margin: 0;
+    font-weight: 800;
     padding: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   img {
     border-radius: 50%;
@@ -23,6 +25,7 @@ export const AvatarConteiner = styled.div`
     margin: 0;
     padding: 0;
     font-size: 0.7rem;
+    font-weight: 300;
     display: block;
   }
 `;

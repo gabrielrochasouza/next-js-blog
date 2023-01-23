@@ -9,13 +9,22 @@ export const SinglePostSectionContainer = styled.section`
   overflow: hidden;
   display: block;
   animation: fadeInUp 1s;
-  @media (max-width: 450px) {
-    padding: 13px;
-  }
   figure {
     overflow: hidden;
     border-radius: 20px;
     width: 100%;
+  }
+  @media (max-width: 550px) {
+    padding: 0px;
+    width: 100%;
+    margin: 0 auto 20px;
+    border-radius: 0px;
+    header, .content{
+      padding: 0 16px 8px ;
+    }
+    figure, figure img {
+      border-radius: 0;
+    }
   }
   span,
   h1 {
@@ -138,12 +147,14 @@ export const CommentsContainer = styled.section`
       background-color: var(--bg-t-hover);
     }
   }
-  @media (max-width: 450px) {
+  @media (max-width: 550px) {
     button,
     input,
     textarea {
       padding: 10px;
     }
+    border-radius: 0px;
+    width: 100%;
   }
   .comment {
     .comment-initials-name {
